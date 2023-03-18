@@ -6,6 +6,17 @@ from selenium.webdriver.common.by import By
 
 from time import sleep
 
+class Autorsvp():
+	def __init__(self,email,password):
+
+		self.browser = webdriver.Firefox(executable_path="./drivers/geckodriver")
+		self.browser.get("https://www.meetup.com")
+
+		self.email = email
+		self.password = password
+
+
+
 
 #Fetchs links of events from group name
 def fetch_events_by_group(group):
@@ -40,6 +51,8 @@ if __name__ == "__main__":
 		# Run this every 1 hour
 
 		# Setup Browser
+		
+
 
 		# Login
 
