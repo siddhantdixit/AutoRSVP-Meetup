@@ -41,6 +41,18 @@ class Autorsvp():
 
 
 
+	def rsvp_meeting(self,link):
+		self.chrome_browser.get("https://www.meetup.com" + link)
+		sleep(6)
+
+
+		#Click RSVP Button
+		attend_button = self.chrome_browser.find_element(By.XPATH,'/html/body/div[1]/div[2]/div[2]/div[2]/main/div[4]/div/div/div[2]/div/div[2]/div[3]/button')
+		attend_button.click()
+
+		sleep(10)
+
+
 
 
 #Fetchs links of events from group name
