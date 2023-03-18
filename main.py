@@ -19,22 +19,22 @@ class Autorsvp():
 		
 		sleep(5)
 
-		login_button = self.chrome_browser.find_element(By.XPATH,'//*[@id="login-link"]')
+		login_button = self.browser.find_element(By.XPATH,'//*[@id="login-link"]')
 		login_button.click()
 		
 		sleep(6)
 
-		email_box = self.chrome_browser.find_element(By.ID,"email")
+		email_box = self.browser.find_element(By.ID,"email")
 		email_box.send_keys(self.email)
 
 		sleep(6)
 
-		password_box = self.chrome_browser.find_element(By.ID,"current-password")
+		password_box = self.browser.find_element(By.ID,"current-password")
 		password_box.send_keys(self.password)
 		
 		sleep(6)
 
-		login_button = self.chrome_browser.find_element(By.NAME,"submitButton")
+		login_button = self.browser.find_element(By.NAME,"submitButton")
 		login_button.click()
 
 		sleep(15)
@@ -42,7 +42,7 @@ class Autorsvp():
 
 
 	def rsvp_meeting(self,link):
-		self.chrome_browser.get("https://www.meetup.com" + link)
+		self.browser.get("https://www.meetup.com" + link)
 		sleep(6)
 
 
@@ -52,7 +52,7 @@ class Autorsvp():
 			return
 
 		#Click RSVP Button
-		attend_button = self.chrome_browser.find_element(By.XPATH,'/html/body/div[1]/div[2]/div[2]/div[2]/main/div[4]/div/div/div[2]/div/div[2]/div[3]/button')
+		attend_button = self.browser.find_element(By.XPATH,'/html/body/div[1]/div[2]/div[2]/div[2]/main/div[4]/div/div/div[2]/div/div[2]/div[3]/button')
 		attend_button.click()
 
 		sleep(10)
@@ -62,7 +62,7 @@ class Autorsvp():
 	#Check if Already RSVPed
 	def __check_already_going(self):
 		text = "You're going to this event!"
-		if text in self.chrome_browser.page_source:
+		if text in self.browser.page_source:
 			print("Already RSVP")
 			return True
 		else:
@@ -70,7 +70,7 @@ class Autorsvp():
 
 
 	def closeBrowser(self):
-		self.chrome_browser.close()
+		self.browser.close()
 
 
 
