@@ -14,6 +14,31 @@ class Autorsvp():
 
 		self.email = email
 		self.password = password
+	
+	def login_with_email(self):
+		
+		sleep(5)
+
+		login_button = self.chrome_browser.find_element(By.XPATH,'//*[@id="login-link"]')
+		login_button.click()
+		
+		sleep(6)
+
+		email_box = self.chrome_browser.find_element(By.ID,"email")
+		email_box.send_keys(self.email)
+
+		sleep(6)
+
+		password_box = self.chrome_browser.find_element(By.ID,"current-password")
+		password_box.send_keys(self.password)
+		
+		sleep(6)
+
+		login_button = self.chrome_browser.find_element(By.NAME,"submitButton")
+		login_button.click()
+
+		sleep(15)
+
 
 
 
@@ -49,6 +74,9 @@ if __name__ == "__main__":
 
 	while True:
 		# Run this every 1 hour
+		
+		rsvper = Autorsvp(email,password)
+		rsvper.login_with_email()
 
 		# Setup Browser
 		
