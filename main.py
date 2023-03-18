@@ -95,10 +95,23 @@ def fetch_events_by_group(group):
 
 if __name__ == "__main__":
 
-	email = 'Your Email'
-	password = 'Your Password'
 
+	print("\n================ Auto RSVP Meetup.com ================\n")
+	
+	email = input("Enter your email: ")
+	password = input("Enter your password: ")
 	groups = []
+
+	no_groups = int(input("Enter the number(count) of groups you want to AutoRSVP: "))
+	
+	print("Enter the groups name in each line")
+
+	for i in range(no_groups):
+		usrinpt =  input("Enter group -> ")
+		groups.append(usrinpt)
+
+
+	print("\n ====== Auto RSVPing (Meetup.com) =======")
 
 	waitTime = 60  #60 Minutes
 
@@ -135,7 +148,9 @@ if __name__ == "__main__":
 				rsvper.rsvp_meeting(link)
 
 				sleep(6)
+			
+			print()
 
-
+		rsvper.closeBrowser()
 		sleep(waitTime*60)
 
