@@ -69,6 +69,9 @@ class Autorsvp():
 			return False
 
 
+	def closeBrowser(self):
+		self.chrome_browser.close()
+
 
 
 #Fetchs links of events from group name
