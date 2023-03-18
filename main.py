@@ -46,11 +46,27 @@ class Autorsvp():
 		sleep(6)
 
 
+		#If Already RSVP'ed
+
+		if self.__check_already_going():
+			return
+
 		#Click RSVP Button
 		attend_button = self.chrome_browser.find_element(By.XPATH,'/html/body/div[1]/div[2]/div[2]/div[2]/main/div[4]/div/div/div[2]/div/div[2]/div[3]/button')
 		attend_button.click()
 
 		sleep(10)
+
+
+
+	#Check if Already RSVPed
+	def __check_already_going(self):
+		text = "You're going to this event!"
+		if text in self.chrome_browser.page_source:
+			print("Already RSVP")
+			return True
+		else:
+			return False
 
 
 
