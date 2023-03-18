@@ -28,8 +28,8 @@ def fetch_events_by_group(group):
 
 if __name__ == "__main__":
 
-	email = 'dixit.rishu00@gmail.com'
-	password = 'rishudixit2023'
+	email = 'Your Email'
+	password = 'Your Password'
 
 	groups = []
 
