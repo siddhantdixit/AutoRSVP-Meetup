@@ -16,8 +16,8 @@ Tested successfully in the following environment.
 ## Setup
 1. Clone the AutoRSVP Meetup repository
 ```
-git clone 
-cd 
+git clone https://github.com/siddhantdixit/AutoRSVP-Meetup
+cd AutoRSVP-Meetup
 ```
 2. Install the required Python libraries using the below command 
 ```

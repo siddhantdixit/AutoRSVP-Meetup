@@ -102,9 +102,9 @@ if __name__ == "__main__":
 	password = input("Enter your password: ")
 	groups = []
 
-	no_groups = int(input("Enter the number(count) of groups you want to AutoRSVP: "))
+	no_groups = int(input("\nEnter the number(count) of groups you want to AutoRSVP: "))
 	
-	print("Enter the groups name in each line")
+	print("\nEnter the groups name in each line\n")
 
 	for i in range(no_groups):
 		usrinpt =  input("Enter group -> ")
