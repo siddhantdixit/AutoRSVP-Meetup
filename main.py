@@ -103,24 +103,39 @@ if __name__ == "__main__":
 	waitTime = 60  #60 Minutes
 
 
+	#Storing Visited Links to Increase Performance
+	visitedLinks = set()
+
 	while True:
 		# Run this every 1 hour
 		
-		rsvper = Autorsvp(email,password)
-		rsvper.login_with_email()
-
 		# Setup Browser
-		
+		rsvper = Autorsvp(email,password)
 
 
 		# Login
+		rsvper.login_with_email()
 
 		# Get Groups Details
 
-			# Iterate through all events in groups
+		for grp in groups:
+				
+			print(grp)
 
-				# RSVP
+			eventLinks = fetch_events_by_group(grp)
 
-		
+			for link in eventLinks:
+				print(link)
+
+				if link in visitedLinks:
+					continue
+
+				visitedLinks.add(link)
+
+				rsvper.rsvp_meeting(link)
+
+				sleep(6)
+
+
 		sleep(waitTime*60)
 
